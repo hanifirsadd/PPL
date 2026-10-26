@@ -70,7 +70,15 @@ php artisan dusk          :: 18 test browser sungguhan (Chrome)
 ```
 
 Pengujian browser memakai basis data terpisah (`antrean_puskesmas_dusk`)
-dan membutuhkan server yang berjalan dengan environment Dusk:
+dan membutuhkan server yang berjalan dengan environment Dusk. Siapkan
+konfigurasinya sekali:
+
+```bat
+copy .env.dusk.example .env.dusk.local
+php artisan key:generate --env=dusk.local
+```
+
+Lalu jalankan server:
 
 ```bat
 php artisan serve --env=dusk.local --host=127.0.0.1 --port=8000
@@ -177,4 +185,4 @@ rekap. Notifikasi WhatsApp/SMS juga di luar lingkup (notifikasi in-app).
 | Daffa | Basis data: migrasi, ERD, constraint KNF-01 |
 | Salma | Pengujian: PHPUnit + Dusk (95 + 18 test) |
 | Galih | Dokumentasi & konfigurasi lingkungan (README, skrip, seeder) |
-| Ghassan | Koordinasi, review, dan integrasi antar bagian |
+| Ghassan | Koordinasi, review, dan integrasi antar bagian |"# PPL" 

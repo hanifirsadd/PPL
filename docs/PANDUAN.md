@@ -138,7 +138,15 @@ php artisan test     :: 95 test aturan bisnis dan antarmuka
 php artisan dusk     :: 18 test browser sungguhan
 ```
 
-Untuk Dusk, server harus berjalan dengan environment khusus:
+Untuk Dusk, server harus berjalan dengan environment khusus. Siapkan
+konfigurasinya sekali:
+
+```bat
+copy .env.dusk.example .env.dusk.local
+php artisan key:generate --env=dusk.local
+```
+
+Lalu jalankan server:
 
 ```bat
 php artisan serve --env=dusk.local --host=127.0.0.1 --port=8000
