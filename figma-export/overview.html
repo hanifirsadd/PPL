@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antrean Puskesmas — Design Overview</title>
+<style>
+  :root{
+    --utama:#0f766e;--utama-tua:#115e59;--utama-muda:#ccfbf1;--latar:#f1f5f9;
+    --kartu:#fff;--teks:#0f172a;--lembut:#64748b;--garis:#e2e8f0;--kuning:#d97706;
+    --biru:#2563eb;--hijau:#16a34a;--merah:#dc2626;--radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--latar);color:var(--teks);
+    font:15px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+  a{color:var(--utama);text-decoration:none}
+  header{background:#0b3f3a;color:#fff;padding:64px 32px 48px}
+  header .wrap{max-width:1280px;margin:auto}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;color:#5eead4;text-transform:uppercase}
+  h1{margin:10px 0 8px;font-size:44px;line-height:1.1;letter-spacing:-.02em}
+  header p{max-width:760px;color:#d1fae5;margin:0 0 26px}
+  .meta{display:flex;gap:12px;flex-wrap:wrap}
+  .meta div{background:#115e59;border-radius:12px;padding:14px 18px;min-width:150px}
+  .meta strong{display:block;font-size:22px}
+  .meta span{font-size:13px;color:#99f6e4}
+  .palette{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .sw{width:92px}
+  .sw i{display:block;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.18)}
+  .sw b{display:block;font-size:11px;color:#99f6e4;margin-top:5px;font-weight:600}
+  .sw code{font-size:10px;color:#5eead4}
+  main{max-width:1280px;margin:0 auto;padding:48px 32px 96px}
+  .intro{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;flex-wrap:wrap;margin-bottom:28px}
+  .intro h2{margin:0;font-size:26px}
+  .intro p{margin:4px 0 0;color:var(--lembut);max-width:720px}
+  .btn{display:inline-block;background:var(--utama);color:#fff;font-weight:700;
+    padding:10px 16px;border-radius:9px;font-size:14px}
+  .btn:hover{filter:brightness(1.08);text-decoration:none}
+  .group{margin:48px 0 0;border-top:1px solid var(--garis);padding-top:28px}
+  .group-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .group-head h3{margin:0;font-size:21px}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;
+    background:var(--utama-muda);color:var(--utama-tua);border:1px solid var(--garis)}
+  .count{color:var(--lembut);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+  .card{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.08),0 4px 16px rgba(15,23,42,.06);
+    display:flex;flex-direction:column;transition:transform .15s ease}
+  .card:hover{transform:translateY(-2px)}
+  .shot{display:block;background:#e8eef4;border-bottom:1px solid var(--garis);overflow:hidden;max-height:300px}
+  .shot img{display:block;width:100%;height:auto}
+  .card-body{padding:14px 16px 16px}
+  .card-body .top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .num{font-size:11px;font-weight:700;background:var(--utama);color:#fff;border-radius:999px;padding:2px 8px}
+  .card-body h4{margin:0;font-size:15px}
+  .card-body code{display:block;color:var(--lembut);font-size:11.5px;margin:2px 0 6px}
+  .card-body p{margin:0;color:var(--lembut);font-size:12.5px;line-height:1.45}
+  .flow{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);padding:22px;margin-top:16px}
+  .flow h4{margin:0 0 8px;font-size:15px}
+  .flow pre{margin:0;white-space:pre-wrap;font:12.5px/1.65 ui-monospace,Consolas,monospace;color:#334155}
+  .foot{margin-top:48px;border-top:1px solid var(--garis);padding-top:20px;color:var(--lembut);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media(max-width:640px){header{padding:44px 20px 36px}h1{font-size:32px}main{padding:32px 16px 72px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Design export · 26 October 2026</div>
+    <h1>Antrean Puskesmas</h1>
+    <p>Sistem Manajemen Antrean Puskesmas Berbasis Web — design system dan 26 layar
+       yang diambil langsung dari aplikasi Laravel yang berjalan. Alur pasien,
+       petugas, dan admin sudah diverifikasi end-to-end.</p>
+    <div class="meta">
+      <div><strong>26</strong><span>layar</span></div>
+      <div><strong>4</strong><span>area peran</span></div>
+      <div><strong>1440 px</strong><span>desktop</span></div>
+      <div><strong>390 px</strong><span>mobile</span></div>
+    </div>
+    <div class="palette">
+      <div class="sw"><i style="background:#0f766e"></i><b>Utama</b><code>#0F766E</code></div>
+      <div class="sw"><i style="background:#115e59"></i><b>Utama tua</b><code>#115E59</code></div>
+      <div class="sw"><i style="background:#ccfbf1"></i><b>Utama muda</b><code>#CCFBF1</code></div>
+      <div class="sw"><i style="background:#f1f5f9"></i><b>Latar</b><code>#F1F5F9</code></div>
+      <div class="sw"><i style="background:#0f172a"></i><b>Teks</b><code>#0F172A</code></div>
+      <div class="sw"><i style="background:#d97706"></i><b>Dipanggil</b><code>#D97706</code></div>
+      <div class="sw"><i style="background:#2563eb"></i><b>Dilayani</b><code>#2563EB</code></div>
+      <div class="sw"><i style="background:#16a34a"></i><b>Selesai</b><code>#16A34A</code></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <div>
+      <h2>Design overview</h2>
+      <p>Klik layar untuk membuka PNG ukuran penuh. File Figma dibuat dengan plugin
+         di <code>plugin/manifest.json</code>; spesifikasi lengkap ada di
+         <a href="design-spec.md">design-spec.md</a>.</p>
+    </div>
+    <a class="btn" href="plugin/manifest.json">Figma plugin manifest</a>
+  </div>
+
+  <section class="group" data-group="public">
+    <div class="group-head">
+      <span class="pill">Publik</span><h3>Tamu &amp; Autentikasi</h3><span class="count">3 layar</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="screens/01-login.png">
+        <span class="shot"><img src="screens/01-login.png" alt="Masuk" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">01</span><h4>Masuk</h4></div>
+          <code>GET /masuk</code><p>Autentikasi email + kata sandi, tamu, dan registrasi.</p></div>
+      </a>
+      <a class="card" href="screens/02-register.png">
+        <span class="shot"><img src="screens/02-register.png" alt="Registrasi" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">02</span><h4>Registrasi Pasien</h4></div>
+          <code>GET /daftar</code><p>Pembuatan akun pasien baru.</p></div>
+      </a>
+      <a class="card" href="screens/03-public-board.png">
+        <span class="shot"><img src="screens/03-public-board.png" alt="Papan Antrean" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">03</span><h4>Papan Antrean (Tamu)</h4></div>
+          <code>GET /papan</code><p>Papan publik tanpa login: dilayani, dipanggil, berikutnya.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <span class="pill" style="background:#ccfbf1;color:#115e59">PASIEN</span><h3>Pasien</h3><span class="count">11 layar</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="screens/04-patient-choose-poli.png">
+        <span class="shot"><img src="screens/04-patient-choose-poli.png" alt="Pilih Poli" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">04</span><h4>Pilih Poli</h4></div>
+          <code>GET /pasien/poli</code><p>Poli aktif, status buka/tutup, sisa kuota, ambil antrean.</p></div>
+      </a>
+      <a class="card" href="screens/05-patient-waiting.png">
+        <span class="shot"><img src="screens/05-patient-waiting.png" alt="Status Menunggu" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">05</span><h4>Status — Menunggu</h4></div>
+          <code>GET /pasien/status</code><p>Nomor, sisa antrean di depan, sedang dilayani, total.</p></div>
+      </a>
+      <a class="card" href="screens/06-patient-active-ticket.png">
+        <span class="shot"><img src="screens/06-patient-active-ticket.png" alt="Antrean aktif" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">06</span><h4>Pilih Poli — Antrean Aktif</h4></div>
+          <code>GET /pasien/poli</code><p>Banner sorot, tombol poli dinonaktifkan.</p></div>
+      </a>
+      <a class="card" href="screens/07-patient-notif-empty.png">
+        <span class="shot"><img src="screens/07-patient-notif-empty.png" alt="Notifikasi kosong" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">07</span><h4>Notifikasi — Kosong</h4></div>
+          <code>GET /pasien/notifikasi</code><p>Empty state dengan penjelasan notifikasi.</p></div>
+      </a>
+      <a class="card" href="screens/08-patient-notif-reminder.png">
+        <span class="shot"><img src="screens/08-patient-notif-reminder.png" alt="Notifikasi pengingat" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">08</span><h4>Notifikasi — Pengingat</h4></div>
+          <code>GET /pasien/notifikasi</code><p>Pengingat sisa 3 antrean + tandai dibaca.</p></div>
+      </a>
+      <a class="card" href="screens/09-patient-history.png">
+        <span class="shot"><img src="screens/09-patient-history.png" alt="Riwayat" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">09</span><h4>Riwayat Antrean</h4></div>
+          <code>GET /pasien/riwayat</code><p>Riwayat lengkap dengan status dan sumber.</p></div>
+      </a>
+      <a class="card" href="screens/10-patient-called.png">
+        <span class="shot"><img src="screens/10-patient-called.png" alt="Status Dipanggil" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">10</span><h4>Status — Dipanggil</h4></div>
+          <code>GET /pasien/status</code><p>Nomor dipanggil dan penanda loket.</p></div>
+      </a>
+      <a class="card" href="screens/11-patient-notif-called.png">
+        <span class="shot"><img src="screens/11-patient-notif-called.png" alt="Notifikasi panggilan" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">11</span><h4>Notifikasi — Panggilan</h4></div>
+          <code>GET /pasien/notifikasi</code><p>Notifikasi panggilan, badge belum dibaca.</p></div>
+      </a>
+      <a class="card" href="screens/12-patient-serving.png">
+        <span class="shot"><img src="screens/12-patient-serving.png" alt="Status Dilayani" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">12</span><h4>Status — Dilayani</h4></div>
+          <code>GET /pasien/status</code><p>Status saat petugas mulai melayani.</p></div>
+      </a>
+      <a class="card" href="screens/13-patient-done.png">
+        <span class="shot"><img src="screens/13-patient-done.png" alt="Status Selesai" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">13</span><h4>Status — Selesai</h4></div>
+          <code>GET /pasien/status</code><p>Status akhir setelah pelayanan.</p></div>
+      </a>
+      <a class="card" href="screens/14-patient-history-done.png">
+        <span class="shot"><img src="screens/14-patient-history-done.png" alt="Riwayat selesai" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">14</span><h4>Riwayat — Selesai</h4></div>
+          <code>GET /pasien/riwayat</code><p>Entri terbaru berstatus selesai.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <span class="pill" style="background:#dbeafe;color:#2563eb">PETUGAS</span><h3>Petugas</h3><span class="count">5 layar</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="screens/15-officer-queue.png">
+        <span class="shot"><img src="screens/15-officer-queue.png" alt="Daftar antrean" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">15</span><h4>Daftar Antrean Hari Ini</h4></div>
+          <code>GET /petugas/antrean</code><p>Filter poli/status, panggil berikutnya, aksi baris.</p></div>
+      </a>
+      <a class="card" href="screens/16-officer-manual.png">
+        <span class="shot"><img src="screens/16-officer-manual.png" alt="Input manual" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">16</span><h4>Input Antrean Manual</h4></div>
+          <code>GET /petugas/antrean/manual</code><p>Walk-in tanpa akun atau dengan email terdaftar.</p></div>
+      </a>
+      <a class="card" href="screens/17-officer-called.png">
+        <span class="shot"><img src="screens/17-officer-called.png" alt="Dipanggil" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">17</span><h4>Daftar — Dipanggil</h4></div>
+          <code>GET /petugas/antrean</code><p>Aksi Mulai Layani dan Lewati.</p></div>
+      </a>
+      <a class="card" href="screens/18-officer-done.png">
+        <span class="shot"><img src="screens/18-officer-done.png" alt="Selesai" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">18</span><h4>Daftar — Selesai</h4></div>
+          <code>GET /petugas/antrean</code><p>Stempel waktu panggil, mulai, selesai.</p></div>
+      </a>
+      <a class="card" href="screens/19-officer-skip-recall.png">
+        <span class="shot"><img src="screens/19-officer-skip-recall.png" alt="Lewati dan panggil ulang" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">19</span><h4>Lewati &amp; Panggil Ulang</h4></div>
+          <code>GET /petugas/antrean</code><p>Cabang DIPANGGIL → DILEWATI → DIPANGGIL.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <span class="pill" style="background:#fef3c7;color:#d97706">ADMIN</span><h3>Admin</h3><span class="count">4 layar</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="screens/20-admin-poli.png">
+        <span class="shot"><img src="screens/20-admin-poli.png" alt="Data Poli" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">20</span><h4>Data Poli</h4></div>
+          <code>GET /admin/poli</code><p>Tambah poli dan tabel data poli.</p></div>
+      </a>
+      <a class="card" href="screens/21-admin-poli-edit.png">
+        <span class="shot"><img src="screens/21-admin-poli-edit.png" alt="Ubah Poli" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">21</span><h4>Ubah Poli</h4></div>
+          <code>GET /admin/poli/{id}/ubah</code><p>Edit kode, nama, deskripsi, status aktif.</p></div>
+      </a>
+      <a class="card" href="screens/22-admin-hours.png">
+        <span class="shot"><img src="screens/22-admin-hours.png" alt="Jam Operasional" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">22</span><h4>Jam Operasional</h4></div>
+          <code>GET /admin/jam</code><p>Jam buka–tutup per poli, pemilih 24 jam.</p></div>
+      </a>
+      <a class="card" href="screens/23-admin-quota.png">
+        <span class="shot"><img src="screens/23-admin-quota.png" alt="Kuota" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">23</span><h4>Kuota Antrean Harian</h4></div>
+          <code>GET /admin/kuota</code><p>Kuota per poli/tanggal dan daftar mendatang.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <span class="pill">390 px</span><h3>Mobile</h3><span class="count">3 layar</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="screens/M1-mobile-login.png">
+        <span class="shot"><img src="screens/M1-mobile-login.png" alt="Mobile masuk" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">M1</span><h4>Masuk</h4></div>
+          <code>GET /masuk</code><p>Tampilan 390 × 844.</p></div>
+      </a>
+      <a class="card" href="screens/M2-mobile-poli.png">
+        <span class="shot"><img src="screens/M2-mobile-poli.png" alt="Mobile pilih poli" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">M2</span><h4>Pilih Poli</h4></div>
+          <code>GET /pasien/poli</code><p>Grid poli satu kolom.</p></div>
+      </a>
+      <a class="card" href="screens/M3-mobile-status.png">
+        <span class="shot"><img src="screens/M3-mobile-status.png" alt="Mobile status" loading="lazy"></span>
+        <div class="card-body"><div class="top"><span class="num">M3</span><h4>Status Antrean</h4></div>
+          <code>GET /pasien/status</code><p>Kartu bertumpuk vertikal.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head"><h3>Verified flow</h3></div>
+    <div class="flow">
+      <h4>Pasien</h4>
+      <pre>Pilih Poli → Status Menunggu → Notifikasi pengingat → Dipanggil → Notifikasi panggilan → Dilayani → Selesai → Riwayat</pre>
+      <h4 style="margin-top:14px">Petugas</h4>
+      <pre>Daftar Antrean → Panggil → Mulai Layani → Selesai
+                              ↘ Lewati → Dilewati → Panggil Ulang → Dipanggil
+Input Manual (walk-in) → Daftar Antrean</pre>
+      <h4 style="margin-top:14px">Admin</h4>
+      <pre>Data Poli → Jam Operasional → Kuota Harian    (dan Ubah Poli)</pre>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Antrean Puskesmas · design export 26 Oktober 2026</span>
+    <span>Next: <a href="README.md">README</a> · <a href="design-spec.md">Design spec</a> · <a href="flow-check.json">Flow check</a></span>
+  </div>
+</main>
+</body>
+</html>

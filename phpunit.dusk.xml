@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Konfigurasi PHPUnit untuk pengujian browser Laravel Dusk (KT-02 / KNF-03).
+    Jalankan dengan: php artisan dusk
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticProperties="false"
+         colors="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Browser Test Suite">
+            <directory suffix="Test.php">./tests/Browser</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+    </source>
+    <php>
+        <!-- Server dan proses test memakai basis data khusus pengujian browser. -->
+        <env name="APP_ENV" value="dusk.local"/>
+        <env name="APP_URL" value="http://127.0.0.1:8000"/>
+        <env name="DB_DATABASE" value="antrean_puskesmas_dusk"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="file"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="MAIL_MAILER" value="array"/>
+    </php>
+</phpunit>

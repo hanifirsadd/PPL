@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-26T15:30:00+07:00",
+  "baseUrl": "http://127.0.0.1:8000",
+  "environment": {
+    "php": "8.1.25",
+    "framework": "Laravel 10",
+    "database": "MySQL 8.4.3 (compatible schema, database antrean_puskesmas)",
+    "browser": "Chrome headless (Puppeteer)",
+    "viewport": "1440x900 desktop, 390x844 mobile"
+  },
+  "accounts": [
+    { "role": "ADMIN", "email": "admin@puskesmas.test", "password": "password123" },
+    { "role": "PETUGAS", "email": "petugas@puskesmas.test", "password": "password123" },
+    { "role": "PASIEN", "email": "siti@contoh.test", "password": "password123" }
+  ],
+  "checks": [
+    {
+      "id": "auth-roles",
+      "status": "pass",
+      "detail": "Login admin, petugas, dan pasien berhasil; masing-masing diarahkan ke /admin/poli, /petugas/antrean, dan /pasien/poli."
+    },
+    {
+      "id": "guest-board",
+      "status": "pass",
+      "detail": "/papan dapat dibuka tanpa login dan menampilkan nomor dilayani, dipanggil, serta antrean berikutnya per poli."
+    },
+    {
+      "id": "registration",
+      "status": "pass",
+      "detail": "Halaman /daftar menampilkan form registrasi pasien dengan validasi kata sandi minimal 8 karakter."
+    },
+    {
+      "id": "take-queue",
+      "status": "pass",
+      "detail": "Pasien Siti mengambil antrean Poli Gigi dan Mulut; nomor PGT-0001 dibuat dan pengguna diarahkan ke /pasien/status dengan flash sukses."
+    },
+    {
+      "id": "one-active-queue",
+      "status": "pass",
+      "detail": "Setelah antrean aktif, seluruh tombol 'Ambil Antrean' menjadi nonaktif dan banner 'Anda sudah memiliki nomor antrean aktif hari ini.' tampil."
+    },
+    {
+      "id": "reminder-notification",
+      "status": "pass",
+      "detail": "Pasien Andi memiliki pengingat REMINDER_3_ANTREAN untuk PU-0003 (tersisa 2 antrean) dan dapat menandainya dibaca."
+    },
+    {
+      "id": "call-queue",
+      "status": "pass",
+      "detail": "Petugas memanggil PGT-0001; status pasien berubah MENUNGGU -> DIPANGGIL dan notifikasi panggilan dibuat (1 notifikasi baru)."
+    },
+    {
+      "id": "serve-and-complete",
+      "status": "pass",
+      "detail": "Petugas menekan Mulai Layani (DIPANGGIL -> DILAYANI) lalu Selesai (DILAYANI -> SELESAI); status pasien dan riwayat ikut berubah."
+    },
+    {
+      "id": "skip-and-recall",
+      "status": "pass",
+      "detail": "PU-0001 dipanggil, dilewati (flash 'Nomor PU-0001 dilewati.'), lalu dipanggil ulang (flash 'Nomor PU-0001 dipanggil ulang.'); status kembali DIPANGGIL."
+    },
+    {
+      "id": "manual-entry",
+      "status": "pass",
+      "detail": "Halaman /petugas/antrean/manual tampil dengan pilihan poli, nama pasien tanpa akun, dan email pasien terdaftar (opsional)."
+    },
+    {
+      "id": "admin-pages",
+      "status": "pass",
+      "detail": "Halaman /admin/poli, /admin/poli/{id}/ubah, /admin/jam, dan /admin/kuota tampil tanpa error."
+    },
+    {
+      "id": "auto-refresh",
+      "status": "pass",
+      "detail": "Halaman status pasien, daftar petugas, dan papan tamu memuat fragmen AJAX setiap 10 detik (window.antreanSegarkan)."
+    }
+  ],
+  "notes": [
+    "Jam operasional hari Senin pada database demo diubah menjadi 00:00-23:59 agar pengambilan antrean bisa diuji di luar jam 08:00-14:00.",
+    "Data sisa pengujian (poli POLIPOLI/PTEST dan antrean uji) dibersihkan sebelum perekaman.",
+    "Tidak ada error baru pada storage/logs/laravel.log selama sesi pemeriksaan."
+  ]
+}

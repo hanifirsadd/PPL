@@ -1,0 +1,300 @@
+{
+  "app": {
+    "name": "Antrean Puskesmas",
+    "fullName": "Sistem Manajemen Antrean Puskesmas",
+    "baseUrl": "http://127.0.0.1:8000",
+    "description": "Web-based queue management for Puskesmas: patients take online queue numbers, officers call and serve queues, admins manage policlinics, operating hours and daily quotas.",
+    "stack": "Laravel 10 · PHP 8.1 · MySQL 8 · Blade + vanilla CSS/JS",
+    "capturedAt": "2026-10-26",
+    "accounts": [
+      {
+        "role": "Admin",
+        "email": "admin@puskesmas.test"
+      },
+      {
+        "role": "Petugas",
+        "email": "petugas@puskesmas.test"
+      },
+      {
+        "role": "Pasien",
+        "email": "siti@contoh.test"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "public",
+      "title": "Tamu & Autentikasi",
+      "role": "Publik",
+      "color": "#475569",
+      "screens": [
+        {
+          "id": "01-login",
+          "source": "01-masuk",
+          "title": "Masuk",
+          "route": "/masuk",
+          "description": "Autentikasi email + kata sandi, opsi masuk sebagai tamu, dan tautan registrasi pasien.",
+          "width": 1440,
+          "height": 743
+        },
+        {
+          "id": "02-register",
+          "source": "02-daftar",
+          "title": "Registrasi Pasien",
+          "route": "/daftar",
+          "description": "Pembuatan akun pasien baru (nama, email, kata sandi).",
+          "width": 1440,
+          "height": 736
+        },
+        {
+          "id": "03-public-board",
+          "source": "03-papan-tamu",
+          "title": "Papan Antrean (Tamu)",
+          "route": "/papan",
+          "description": "Papan publik tanpa login: nomor dilayani, dipanggil, dan antrean berikutnya per poli.",
+          "width": 1440,
+          "height": 1031
+        }
+      ]
+    },
+    {
+      "id": "patient",
+      "title": "Pasien",
+      "role": "PASIEN",
+      "color": "#0f766e",
+      "screens": [
+        {
+          "id": "04-patient-choose-poli",
+          "source": "04-pasien-pilih-poli",
+          "title": "Pilih Poli",
+          "route": "/pasien/poli",
+          "description": "Daftar poli aktif dengan status buka/tutup, sisa kuota, dan tombol ambil antrean.",
+          "width": 1440,
+          "height": 748
+        },
+        {
+          "id": "05-patient-waiting",
+          "source": "05-pasien-status-menunggu",
+          "title": "Status Antrean — Menunggu",
+          "route": "/pasien/status",
+          "description": "Nomor antrean besar, status, sisa antrean di depan, nomor yang sedang dilayani, dan total antrean.",
+          "width": 1440,
+          "height": 929
+        },
+        {
+          "id": "06-patient-active-ticket",
+          "source": "06-pasien-pilih-poli-antrean-aktif",
+          "title": "Pilih Poli — Antrean Aktif",
+          "route": "/pasien/poli",
+          "description": "Keadaan saat pasien sudah punya antrean aktif: banner sorot dan tombol poli dinonaktifkan.",
+          "width": 1440,
+          "height": 858
+        },
+        {
+          "id": "07-patient-notif-empty",
+          "source": "07-pasien-notifikasi-kosong",
+          "title": "Notifikasi — Kosong",
+          "route": "/pasien/notifikasi",
+          "description": "Empty state notifikasi in-app dengan penjelasan kapan notifikasi dikirim.",
+          "width": 1440,
+          "height": 370
+        },
+        {
+          "id": "08-patient-notif-reminder",
+          "source": "08-pasien-notifikasi-reminder",
+          "title": "Notifikasi — Pengingat",
+          "route": "/pasien/notifikasi",
+          "description": "Pengingat otomatis saat tersisa 3 antrean di depan, dengan aksi tandai dibaca.",
+          "width": 1440,
+          "height": 396
+        },
+        {
+          "id": "09-patient-history",
+          "source": "08-pasien-riwayat",
+          "title": "Riwayat Antrean",
+          "route": "/pasien/riwayat",
+          "description": "Tabel riwayat seluruh antrean pasien beserta status dan sumber antrean.",
+          "width": 1440,
+          "height": 393
+        },
+        {
+          "id": "10-patient-called",
+          "source": "09-pasien-status-dipanggil",
+          "title": "Status Antrean — Dipanggil",
+          "route": "/pasien/status",
+          "description": "Status DIPANGGIL dengan penanda nomor yang sedang dipanggil.",
+          "width": 1440,
+          "height": 863
+        },
+        {
+          "id": "11-patient-notif-called",
+          "source": "13-pasien-notifikasi-panggilan",
+          "title": "Notifikasi — Panggilan",
+          "route": "/pasien/notifikasi",
+          "description": "Notifikasi panggilan nomor dengan badge Panggilan dan penanda belum dibaca.",
+          "width": 1440,
+          "height": 396
+        },
+        {
+          "id": "12-patient-serving",
+          "source": "11-pasien-status-dilayani",
+          "title": "Status Antrean — Dilayani",
+          "route": "/pasien/status",
+          "description": "Status DILAYANI saat petugas mulai melayani pasien.",
+          "width": 1440,
+          "height": 863
+        },
+        {
+          "id": "13-patient-done",
+          "source": "12-pasien-status-selesai",
+          "title": "Status Antrean — Selesai",
+          "route": "/pasien/status",
+          "description": "Status akhir SELESAI setelah pelayanan dikonfirmasi petugas.",
+          "width": 1440,
+          "height": 863
+        },
+        {
+          "id": "14-patient-history-done",
+          "source": "13-pasien-riwayat-selesai",
+          "title": "Riwayat Antrean — Selesai",
+          "route": "/pasien/riwayat",
+          "description": "Riwayat dengan entri terbaru berstatus selesai.",
+          "width": 1440,
+          "height": 438
+        }
+      ]
+    },
+    {
+      "id": "officer",
+      "title": "Petugas",
+      "role": "PETUGAS",
+      "color": "#2563eb",
+      "screens": [
+        {
+          "id": "15-officer-queue",
+          "source": "09-petugas-daftar-antrean",
+          "title": "Daftar Antrean Hari Ini",
+          "route": "/petugas/antrean",
+          "description": "Tabel antrean dengan filter poli/status, tombol panggil berikutnya, dan aksi per baris.",
+          "width": 1440,
+          "height": 761
+        },
+        {
+          "id": "16-officer-manual",
+          "source": "10-petugas-input-manual",
+          "title": "Input Antrean Manual",
+          "route": "/petugas/antrean/manual",
+          "description": "Form walk-in: pilih poli, nama pasien tanpa akun atau email pasien terdaftar.",
+          "width": 1440,
+          "height": 692
+        },
+        {
+          "id": "17-officer-called",
+          "source": "11-petugas-daftar-dipanggil",
+          "title": "Daftar Antrean — Dipanggil",
+          "route": "/petugas/antrean",
+          "description": "Baris berstatus Dipanggil dengan aksi Mulai Layani dan Lewati.",
+          "width": 1440,
+          "height": 860
+        },
+        {
+          "id": "18-officer-done",
+          "source": "17-petugas-daftar-selesai",
+          "title": "Daftar Antrean — Selesai",
+          "route": "/petugas/antrean",
+          "description": "Baris selesai dengan stempel waktu panggil, mulai, dan selesai.",
+          "width": 1440,
+          "height": 996
+        },
+        {
+          "id": "19-officer-skip-recall",
+          "source": "21-petugas-dilewati-dipanggil-ulang",
+          "title": "Daftar Antrean — Lewati & Panggil Ulang",
+          "route": "/petugas/antrean",
+          "description": "Cabang DIPANGGIL → DILEWATI → DIPANGGIL melalui tombol Lewati dan Panggil Ulang.",
+          "width": 1440,
+          "height": 860
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "title": "Admin",
+      "role": "ADMIN",
+      "color": "#d97706",
+      "screens": [
+        {
+          "id": "20-admin-poli",
+          "source": "17-admin-poli",
+          "title": "Data Poli",
+          "route": "/admin/poli",
+          "description": "Form tambah poli dan tabel poli (kode, nama, status, jumlah antrean, aksi).",
+          "width": 1440,
+          "height": 691
+        },
+        {
+          "id": "21-admin-poli-edit",
+          "source": "18-admin-poli-ubah",
+          "title": "Ubah Poli",
+          "route": "/admin/poli/{id}/ubah",
+          "description": "Form edit poli dengan kode, nama, deskripsi, dan status aktif.",
+          "width": 1440,
+          "height": 642
+        },
+        {
+          "id": "22-admin-hours",
+          "source": "19-admin-jam-operasional",
+          "title": "Jam Operasional",
+          "route": "/admin/jam",
+          "description": "Pengaturan jam buka–tutup per poli per hari, memakai pemilih jam 24 jam.",
+          "width": 1440,
+          "height": 1255
+        },
+        {
+          "id": "23-admin-quota",
+          "source": "20-admin-kuota",
+          "title": "Kuota Antrean Harian",
+          "route": "/admin/kuota",
+          "description": "Penetapan kuota per poli per tanggal dan tabel kuota mendatang.",
+          "width": 1440,
+          "height": 912
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "title": "Mobile · 390px",
+      "role": "Responsif",
+      "color": "#64748b",
+      "screens": [
+        {
+          "id": "M1-mobile-login",
+          "source": "m-01-masuk",
+          "title": "Mobile — Masuk",
+          "route": "/masuk",
+          "description": "Tampilan 390 × 844 pada halaman masuk.",
+          "width": 390,
+          "height": 818
+        },
+        {
+          "id": "M2-mobile-poli",
+          "source": "m-02-pasien-pilih-poli",
+          "title": "Mobile — Pilih Poli",
+          "route": "/pasien/poli",
+          "description": "Grid poli menjadi satu kolom pada layar sempit.",
+          "width": 390,
+          "height": 1595
+        },
+        {
+          "id": "M3-mobile-status",
+          "source": "m-03-pasien-status",
+          "title": "Mobile — Status Antrean",
+          "route": "/pasien/status",
+          "description": "Kartu nomor dan statistik bertumpuk vertikal pada layar sempit.",
+          "width": 390,
+          "height": 1372
+        }
+      ]
+    }
+  ]
+}

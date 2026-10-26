@@ -1,0 +1,859 @@
+{
+  "desktop:/masuk": {
+    "route": "/masuk",
+    "controls": [
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "text": "nama@contoh.test",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 200.578125,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 126.86
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password",
+        "text": "••••••••",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 281.375,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 49.4
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "ingat",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": false,
+        "disabled": false,
+        "rect": {
+          "x": 515,
+          "y": 339.46875,
+          "w": 13,
+          "h": 13
+        },
+        "fontSize": 13.3333,
+        "fontWeight": 400,
+        "fontFamily": "Arial",
+        "color": "rgb(0, 0, 0)",
+        "paddingLeft": 0,
+        "paddingTop": 0,
+        "borderTopWidth": 0,
+        "lineHeight": 17.733289,
+        "textWidth": 0
+      }
+    ]
+  },
+  "desktop:/daftar": {
+    "route": "/daftar",
+    "controls": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nama",
+        "text": "Nama Anda",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 223.390625,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 79.18
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "text": "nama@contoh.test",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 304.1875,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 126.86
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 384.984375,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 0
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password_confirmation",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 465.78125,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 0
+      }
+    ]
+  },
+  "desktop:/papan": {
+    "route": "/papan",
+    "controls": []
+  },
+  "desktop:/pasien/poli": {
+    "route": "/pasien/poli",
+    "controls": []
+  },
+  "desktop:/pasien/status": {
+    "route": "/pasien/status",
+    "controls": []
+  },
+  "desktop:/pasien/riwayat": {
+    "route": "/pasien/riwayat",
+    "controls": []
+  },
+  "desktop:/pasien/notifikasi": {
+    "route": "/pasien/notifikasi",
+    "controls": []
+  },
+  "desktop:/petugas/antrean": {
+    "route": "/petugas/antrean",
+    "controls": [
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "poli",
+        "text": "Semua poli",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 300.953125,
+          "w": 173.375,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 74.82
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "status",
+        "text": "Semua status",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 407.96875,
+          "y": 300.953125,
+          "w": 160,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 89.15
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "id_poli",
+        "text": "— pilih poli —",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 974.1875,
+          "y": 262.953125,
+          "w": 244.8125,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 96.68
+      }
+    ]
+  },
+  "desktop:/petugas/antrean/manual": {
+    "route": "/petugas/antrean/manual",
+    "controls": [
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "id_poli",
+        "text": "— pilih poli —",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 207.140625,
+          "w": 418,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 96.68
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nama",
+        "text": "Nama lengkap pasien",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 289.9375,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 145.02
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "text": "pasien@contoh.test",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 370.734375,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 133.05
+      }
+    ]
+  },
+  "desktop:/admin/poli": {
+    "route": "/admin/poli",
+    "controls": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "kode_poli",
+        "text": "PGT",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 240.421875,
+          "w": 470,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 26.54
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nama_poli",
+        "text": "Poli Gig dan Mulut",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 321.21875,
+          "w": 470,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 124.74
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "deskripsi",
+        "text": "Deskripsi singkat layanan",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 402.015625,
+          "w": 470,
+          "h": 59.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 168.54
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "status_aktif",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": true,
+        "disabled": false,
+        "rect": {
+          "x": 225,
+          "y": 480.109375,
+          "w": 13,
+          "h": 13
+        },
+        "fontSize": 13.3333,
+        "fontWeight": 400,
+        "fontFamily": "Arial",
+        "color": "rgb(0, 0, 0)",
+        "paddingLeft": 0,
+        "paddingTop": 0,
+        "borderTopWidth": 0,
+        "lineHeight": 17.733289,
+        "textWidth": 0
+      }
+    ]
+  },
+  "desktop:/admin/jam": {
+    "route": "/admin/jam",
+    "controls": [
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "poli_id",
+        "text": "— pilih poli —",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 239.421875,
+          "w": 173.375,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 96.68
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "hari",
+        "text": "Senin",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 407.96875,
+          "y": 239.421875,
+          "w": 160,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 36.91
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "jam_buka",
+        "text": "08",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 581.5625,
+          "y": 239.421875,
+          "w": 74,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 16.39
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "menit_buka",
+        "text": "00",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 664.171875,
+          "y": 239.421875,
+          "w": 74,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 16.39
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "jam_tutup",
+        "text": "14",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 751.765625,
+          "y": 239.421875,
+          "w": 74,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 16.39
+      },
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "menit_tutup",
+        "text": "00",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 834.375,
+          "y": 239.421875,
+          "w": 74,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 16.39
+      }
+    ]
+  },
+  "desktop:/admin/kuota": {
+    "route": "/admin/kuota",
+    "controls": [
+      {
+        "tag": "select",
+        "type": "select",
+        "name": "poli_id",
+        "text": "— pilih poli —",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 221,
+          "y": 239.421875,
+          "w": 173.375,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 96.68
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "tanggal_berlaku",
+        "text": "2026-10-26",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 407.96875,
+          "y": 239.421875,
+          "w": 160,
+          "h": 41.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 77.71
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "jumlah_kuota",
+        "text": "30",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 581.5625,
+          "y": 241.421875,
+          "w": 160,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 16.39
+      }
+    ]
+  },
+  "desktop:/admin/poli/{id}/ubah": {
+    "route": "/admin/poli/2/ubah",
+    "controls": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "kode_poli",
+        "text": "PGT",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 207.140625,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 26.54
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nama_poli",
+        "text": "Poli Gigi dan Mulut",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 287.9375,
+          "w": 418,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 128.42
+      },
+      {
+        "tag": "textarea",
+        "type": "textarea",
+        "name": "deskripsi",
+        "text": "Layanan kesehatan gigi dan mulut.",
+        "isPlaceholder": false,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 511,
+          "y": 368.734375,
+          "w": 418,
+          "h": 59.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(15, 23, 42)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 232.27
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "status_aktif",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": true,
+        "disabled": false,
+        "rect": {
+          "x": 515,
+          "y": 446.828125,
+          "w": 13,
+          "h": 13
+        },
+        "fontSize": 13.3333,
+        "fontWeight": 400,
+        "fontFamily": "Arial",
+        "color": "rgb(0, 0, 0)",
+        "paddingLeft": 0,
+        "paddingTop": 0,
+        "borderTopWidth": 0,
+        "lineHeight": 17.733289,
+        "textWidth": 0
+      }
+    ]
+  },
+  "mobile:/masuk": {
+    "route": "/masuk",
+    "controls": [
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "text": "nama@contoh.test",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 33.796875,
+          "y": 255.078125,
+          "w": 322.40625,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 126.86
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password",
+        "text": "••••••••",
+        "isPlaceholder": true,
+        "checked": null,
+        "disabled": false,
+        "rect": {
+          "x": 33.796875,
+          "y": 335.875,
+          "w": 322.40625,
+          "h": 39.59375
+        },
+        "fontSize": 15.2,
+        "fontWeight": 400,
+        "fontFamily": "Segoe UI",
+        "color": "rgb(117, 117, 117)",
+        "paddingLeft": 11.2,
+        "paddingTop": 8.8,
+        "borderTopWidth": 1,
+        "lineHeight": 20.216,
+        "textWidth": 49.4
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "ingat",
+        "text": "",
+        "isPlaceholder": false,
+        "checked": false,
+        "disabled": false,
+        "rect": {
+          "x": 37.796875,
+          "y": 393.96875,
+          "w": 13,
+          "h": 13
+        },
+        "fontSize": 13.3333,
+        "fontWeight": 400,
+        "fontFamily": "Arial",
+        "color": "rgb(0, 0, 0)",
+        "paddingLeft": 0,
+        "paddingTop": 0,
+        "borderTopWidth": 0,
+        "lineHeight": 17.733289,
+        "textWidth": 0
+      }
+    ]
+  }
+}
